@@ -22,9 +22,22 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="csv.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="csv.h" />
+		<Unit filename="initialisation.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="initialisation.h" />
+		<Unit filename="interface.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="interface.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="structures.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
