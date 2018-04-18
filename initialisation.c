@@ -3,6 +3,7 @@
 #include "structures.h"
 #include "csv.h"
 
+//local requirements
 void creer_rue(FILE*, Rue*);
 
 //variables statiques
@@ -16,8 +17,8 @@ int get_nb_rues(){
 int get_nb_noeuds(){
     return nb_noeuds;
 }
-//todo recuperer le nb noeuds de l'exterieur
-void configurer()
+//TODO recuperer le nb noeuds de l'exterieur
+void configurer_programme()
 {
     nb_rues = 8;
     nb_noeuds = 6;
@@ -75,7 +76,7 @@ void initialiser_feuille_de_calcul(Noeud feuille_de_calcul[])
     {
         feuille_de_calcul[i]=defaut;
         /*test*/
-        printf("\n%d", feuille_de_calcul[i].poids);
+        //printf("\n%d", feuille_de_calcul[i].poids);
     }
 }
 

@@ -2,17 +2,18 @@
 1523978272 source:c:\users\toshiba\desktop\dijkstra_clean\csv.c
 	<stdio.h>
 
-1523982715 source:c:\users\toshiba\desktop\dijkstra_clean\main.c
+1524061408 source:c:\users\toshiba\desktop\dijkstra_clean\main.c
 	<stdio.h>
 	<stdlib.h>
 	"structures.h"
 	"initialisation.h"
 	"interface.h"
+	"dijkstra.h"
 
-1523966148 c:\users\toshiba\desktop\dijkstra_clean\structures.h
+1523984249 c:\users\toshiba\desktop\dijkstra_clean\structures.h
 	<stdlib.h>
 
-1523965900 c:\users\toshiba\desktop\dijkstra_clean\initialisation.h
+1524062398 c:\users\toshiba\desktop\dijkstra_clean\initialisation.h
 	<stdio.h>
 	"structures.h"
 
@@ -28,7 +29,7 @@
 1523970291 c:\users\toshiba\desktop\dijkstra_clean\interface.h
 	"structures.h"
 
-1523983493 source:c:\users\toshiba\desktop\dijkstra_clean\interface.c
+1524061997 source:c:\users\toshiba\desktop\dijkstra_clean\interface.c
 	"structures.h"
 	"csv.h"
 	"initialisation.h"
@@ -36,4 +37,13 @@
 	<string.h>
 	<ctype.h>
 	<stdlib.h>
+
+1524059466 source:c:\users\toshiba\desktop\dijkstra_clean\dijkstra.c
+	<stdio.h>
+	<string.h>
+	"structures.h"
+	"initialisation.h"
+
+1524058454 c:\users\toshiba\desktop\dijkstra_clean\dijkstra.h
+	"structures.h"
 

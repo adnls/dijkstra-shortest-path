@@ -74,23 +74,27 @@ int choisir_noeud(int id_rue, Rue graph[][get_nb_noeuds()], char liste_rues[][LO
 
     printf("\nchoisissez un noeud : ");
     scanf("%d", &choix);
+    //printf("\nvous avez choisi le noeud numero : %d", propositions[choix-1]);
     return propositions[choix-1];
 }
-/*void afficher_chemin(Step* first, char names[][100])
-{
-    int i=0;
-    //printf("\nkjdfghkdjfghdfg");
 
-    Step *tmp=first;
+
+void afficher_chemin(Etape* point_depart, char liste_rues[][LONGUEUR_CHAMP])
+{
+    int i=0, distance_totale = 0;
+    Etape *tmp=point_depart;
 
     while (tmp!=NULL)
     {
-        //printf("%s", tmp->street);
-        printf("\nstep %d : %s",i+1, names[tmp->street]);
-        tmp = tmp->next;
+        printf("\nEtape %d => %s : %d m", i+1, liste_rues[tmp->id_rue], tmp->distance);
+        distance_totale += tmp->distance;
         i++;
+
+        tmp = tmp->prochaine;
     }
-}*/
+
+    printf("\ndistance totale : %d m", distance_totale);
+}
 
 /*int choisir_rue_par_recherche(char names[][100])
 {
