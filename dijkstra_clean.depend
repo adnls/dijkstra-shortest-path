@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1523978272 source:c:\users\toshiba\desktop\dijkstra_clean\csv.c
+1524090145 source:c:\users\toshiba\desktop\dijkstra_clean\csv.c
 	<stdio.h>
 
-1524061408 source:c:\users\toshiba\desktop\dijkstra_clean\main.c
+1524180429 source:c:\users\toshiba\desktop\dijkstra_clean\main.c
 	<stdio.h>
 	<stdlib.h>
 	"structures.h"
@@ -17,7 +17,7 @@
 	<stdio.h>
 	"structures.h"
 
-1523980162 source:c:\users\toshiba\desktop\dijkstra_clean\initialisation.c
+1524062334 source:c:\users\toshiba\desktop\dijkstra_clean\initialisation.c
 	<string.h>
 	<ctype.h>
 	"structures.h"
@@ -26,10 +26,10 @@
 1523961733 c:\users\toshiba\desktop\dijkstra_clean\csv.h
 	<stdio.h>
 
-1523970291 c:\users\toshiba\desktop\dijkstra_clean\interface.h
+1524093630 c:\users\toshiba\desktop\dijkstra_clean\interface.h
 	"structures.h"
 
-1524061997 source:c:\users\toshiba\desktop\dijkstra_clean\interface.c
+1524180405 source:c:\users\toshiba\desktop\dijkstra_clean\interface.c
 	"structures.h"
 	"csv.h"
 	"initialisation.h"

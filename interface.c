@@ -11,25 +11,33 @@
 
 void afficher_rues(char(*)[]);
 int choisir_noeud(int, Rue(*)[], char(*)[]);
+void nettoyer_ecran();
+void entree_pour_continuer();
 
 void choisir_chemin(int* noeud_A, int* noeud_B, Rue graph[][get_nb_noeuds()], char liste_rues[][LONGUEUR_CHAMP])
 {
     int id_rue;
-
-    printf("\ncherchez un point de depart!");
+    nettoyer_ecran();
+    printf("\ntrouvez votre point de départ");
     afficher_rues(liste_rues);
     printf("\nentrez un id_rue : ");
     scanf("%d", &id_rue);
+    fflush(stdin);
     id_rue--;
+    nettoyer_ecran();
     (*noeud_A) = choisir_noeud(id_rue, graph, liste_rues);
     //printf("zzzzzzzzzzzzzzzzzz %d", (*noeud_A));
 
+    nettoyer_ecran();
     printf("\ncherchez un point d'arrivee!");
     afficher_rues(liste_rues);
     printf("\nentrez un id_rue : ");
     scanf("%d", &id_rue);
+    fflush(stdin);
     id_rue--;
+    nettoyer_ecran();
     (*noeud_B) = choisir_noeud(id_rue, graph, liste_rues);
+
 
 }
 
@@ -74,6 +82,7 @@ int choisir_noeud(int id_rue, Rue graph[][get_nb_noeuds()], char liste_rues[][LO
 
     printf("\nchoisissez un noeud : ");
     scanf("%d", &choix);
+    fflush(stdin);
     //printf("\nvous avez choisi le noeud numero : %d", propositions[choix-1]);
     return propositions[choix-1];
 }
@@ -83,6 +92,8 @@ void afficher_chemin(Etape* point_depart, char liste_rues[][LONGUEUR_CHAMP])
 {
     int i=0, distance_totale = 0;
     Etape *tmp=point_depart;
+
+    nettoyer_ecran();
 
     while (tmp!=NULL)
     {
@@ -94,59 +105,44 @@ void afficher_chemin(Etape* point_depart, char liste_rues[][LONGUEUR_CHAMP])
     }
 
     printf("\ndistance totale : %d m", distance_totale);
+    entree_pour_continuer();
 }
 
-/*int choisir_rue_par_recherche(char names[][100])
+int choisir_mode()
 {
-    FILE* txt;
-    char path[]="names;.txt", field[100], research[100];
-    txt = fopen(path, "r");
-    int i, j=0;
-    char research[100];
-    Link *first=NULL, *tmp;
+    int reponse = 0;
 
-    while (!feof(txt))
+    while (reponse != 1 && reponse != 2)
     {
-        //fscanf(txt, "%s", field);
-        fgets(field, sizeof field, txt);
-        printf("%s", field);
-    }
+        printf("\n> Choisissez un mode: \n");
+        printf("\n1 - A pieds");
+        printf("\n2 - En voiture\n\n> ");
+        scanf("%d", &reponse);
+        fflush(stdin);
+    };
 
-    printf("\n\nrecherche : ");
+    return reponse;
+}
 
-    gets(research);
-    fflush(stdin); //avoir toute la str
-    strcmprss(research);
-    tolowers(research);
 
-    int nb_rues = get_nb_rues();
-
-    for (i=0; i<nb_rues; i++)
-    {
-        if (strsearch(names[i], research)==1)
-        {
-            //printf("\n%s", names[i]);
-            simple_fifoq_put(i, &first);
-            j++;
-        }
-    }
-
-    tmp = first;
-    while (simple_fifoq_get(&tmp, &i))
-            printf("%d", i);
-
-    if (j==0)
-        printf("\naucun resultat");
-        //search_street(names);
-    else
-        printf("\n%d resultat(s)\n", j);
-
-    return 0;
-}*/
-
-/*void choose_node()
+void nettoyer_ecran()
 {
+    for (int i = 0; i < 207; i++) printf("\n");
+}
 
-}*/
+void entree_pour_continuer()
+{
+    printf("> Appuyez sur entree pour coninuer\n\n> ");
+    getchar();
+    fflush(stdin);
+}
 
-
+void afficher_menu()
+{
+        nettoyer_ecran();
+        printf("> Menu\n");
+        printf("1 - Trouver un plus court chemin\n");
+        printf("2 - Revoir le chemin\n");
+        printf("3 - Quitter\n");
+        printf("\n> Entrez un chiffre :\n\n> ");
+}

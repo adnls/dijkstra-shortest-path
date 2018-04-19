@@ -5,7 +5,7 @@ int csvscanf(FILE* csv, char champ[])
     char tmp='a', delimiteur=',';
     int i=0;
 
-    while ((tmp!='\n') && (tmp != delimiteur) && (tmp!=EOF))
+    while ((tmp!= '\n') && (tmp != delimiteur) && (tmp != EOF))
     {
         if (fscanf(csv, "%c", &tmp)!=EOF)
         {
