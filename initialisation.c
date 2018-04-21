@@ -20,8 +20,12 @@ int get_nb_noeuds(){
 //TODO recuperer le nb noeuds de l'exterieur
 void configurer_programme()
 {
-    nb_rues = 11;
-    nb_noeuds = 20;
+    char chemin[]="config.txt", tmp[LONGUEUR_CHAMP];
+    FILE* fichier;
+    fichier = fopen(chemin, "r");
+    fscanf(fichier, "%d", &nb_rues);
+    fscanf(fichier, "%d", &nb_noeuds);
+    fclose(fichier);
 }
 
 void initialiser_liste_rues(char noms[][LONGUEUR_CHAMP])

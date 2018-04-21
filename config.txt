@@ -1,2 +1,1 @@
-nb_noeuds == 6
-nb_rues == 8
+11 20
