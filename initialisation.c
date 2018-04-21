@@ -20,8 +20,8 @@ int get_nb_noeuds(){
 //TODO recuperer le nb noeuds de l'exterieur
 void configurer_programme()
 {
-    nb_rues = 8;
-    nb_noeuds = 6;
+    nb_rues = 11;
+    nb_noeuds = 20;
 }
 
 void initialiser_liste_rues(char noms[][LONGUEUR_CHAMP])
@@ -36,7 +36,7 @@ void initialiser_liste_rues(char noms[][LONGUEUR_CHAMP])
         csvscanf(csv, tmp);
         strcpy(noms[i], tmp);
         /*test*/
-        printf("\n%s", noms[i]);
+        //printf("\n%s", noms[i]);
     }
     fclose(csv);
 }
@@ -58,8 +58,8 @@ void initialiser_graph(Rue graph[][nb_noeuds])
         graph[ligne][colonne]=tmp;
 
         /*test*/
-        printf("\n%d - %d : %d - %d",
-               graph[ligne][colonne].id_rue, graph[ligne][colonne].distance, ligne, colonne);
+        /*printf("\n%d - %d : %d - %d",
+               graph[ligne][colonne].id_rue, graph[ligne][colonne].distance, ligne, colonne);*/
 
         if (colonne==nb_noeuds-1)
             ligne++;

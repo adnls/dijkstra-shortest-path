@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
 #ifndef INFINI
-#define INFINI 999
+#define INFINI 9999
 #endif
 
 #ifndef LONGUEUR_CHAMP

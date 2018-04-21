@@ -18,26 +18,27 @@ void choisir_chemin(int* noeud_A, int* noeud_B, Rue graph[][get_nb_noeuds()], ch
 {
     int id_rue;
     nettoyer_ecran();
-    printf("\ntrouvez votre point de départ");
+    printf("\n> Trouvez votre point de depart\n");
     afficher_rues(liste_rues);
-    printf("\nentrez un id_rue : ");
+    printf("\n\n> Entrez un chiffre :\n\n> ");
     scanf("%d", &id_rue);
     fflush(stdin);
     id_rue--;
     nettoyer_ecran();
+    printf("\n%s\n", liste_rues[id_rue]);
     (*noeud_A) = choisir_noeud(id_rue, graph, liste_rues);
     //printf("zzzzzzzzzzzzzzzzzz %d", (*noeud_A));
 
     nettoyer_ecran();
-    printf("\ncherchez un point d'arrivee!");
+    printf("\n> Trouvez votre point d'arrivee!\n");
     afficher_rues(liste_rues);
-    printf("\nentrez un id_rue : ");
+    printf("\n\n> Entrez un chiffre :\n\n> ");
     scanf("%d", &id_rue);
     fflush(stdin);
     id_rue--;
     nettoyer_ecran();
+    printf("\n%s\n", liste_rues[id_rue]);
     (*noeud_B) = choisir_noeud(id_rue, graph, liste_rues);
-
 
 }
 
@@ -58,20 +59,21 @@ int choisir_noeud(int id_rue, Rue graph[][get_nb_noeuds()], char liste_rues[][LO
     int propositions[nb_noeuds];
     int l = 0;
 
+    printf("> Choisissez une intersection\n");
+
     for (int i = 0; i<nb_noeuds; i++)
     {
         for (int j = 0; j < nb_noeuds; j++)
         {
             if (graph[i][j].id_rue == id_rue)
             {
-                printf("\n////////////////");
                 printf("\n%d - Intersection de : " , l+1);
 
                 for (int k = 0; k <nb_noeuds; k++)
                 {
                     if (graph[i][k].distance != INFINI)
                     {
-                        printf("\n- %s", liste_rues[graph[i][k].id_rue]);
+                        printf("\n - %s", liste_rues[graph[i][k].id_rue]);
                     }
                 }
                 propositions[l] = i;
@@ -80,7 +82,7 @@ int choisir_noeud(int id_rue, Rue graph[][get_nb_noeuds()], char liste_rues[][LO
         }
     }
 
-    printf("\nchoisissez un noeud : ");
+    printf("\n\n> Entrez un  chiffre :\n\n> ");
     scanf("%d", &choix);
     fflush(stdin);
     //printf("\nvous avez choisi le noeud numero : %d", propositions[choix-1]);
@@ -88,7 +90,7 @@ int choisir_noeud(int id_rue, Rue graph[][get_nb_noeuds()], char liste_rues[][LO
 }
 
 
-void afficher_chemin(Etape* point_depart, char liste_rues[][LONGUEUR_CHAMP])
+void afficher_chemin(Etape* point_depart, char liste_rues[][LONGUEUR_CHAMP], int noeud_A, int noeud_B)
 {
     int i=0, distance_totale = 0;
     Etape *tmp=point_depart;
@@ -97,14 +99,14 @@ void afficher_chemin(Etape* point_depart, char liste_rues[][LONGUEUR_CHAMP])
 
     while (tmp!=NULL)
     {
-        printf("\nEtape %d => %s : %d m", i+1, liste_rues[tmp->id_rue], tmp->distance);
+        printf("\nEtape %d - %s : %d metres", i+1, liste_rues[tmp->id_rue], tmp->distance);
         distance_totale += tmp->distance;
         i++;
 
         tmp = tmp->prochaine;
     }
 
-    printf("\ndistance totale : %d m", distance_totale);
+    printf("\n\nDistance totale : %d metres", distance_totale);
     entree_pour_continuer();
 }
 
@@ -124,25 +126,24 @@ int choisir_mode()
     return reponse;
 }
 
-
-void nettoyer_ecran()
-{
-    for (int i = 0; i < 207; i++) printf("\n");
-}
-
-void entree_pour_continuer()
-{
-    printf("> Appuyez sur entree pour coninuer\n\n> ");
-    getchar();
-    fflush(stdin);
-}
-
 void afficher_menu()
 {
         nettoyer_ecran();
-        printf("> Menu\n");
+        printf("> Menu\n\n");
         printf("1 - Trouver un plus court chemin\n");
         printf("2 - Revoir le chemin\n");
         printf("3 - Quitter\n");
         printf("\n> Entrez un chiffre :\n\n> ");
+}
+
+void nettoyer_ecran()
+{
+    for (int i = 0; i < 20; i++) printf("\n");
+}
+
+void entree_pour_continuer()
+{
+    printf("\n\n> Appuyez sur entree pour coninuer\n\n> ");
+    getchar();
+    fflush(stdin);
 }

@@ -1,8 +1,11 @@
-rue de la paix
-avenue de la republique
-rue des rosiers
-avenue du general de gaulle
-boulevard du louvre
-rue jean l'olive
-rue marceau
-rue de paris
+Rue d'Antin
+Rue des Capucines
+Boulevard des Capucines
+Rue Danielle-Casanova
+Rue Daunou
+Rue Louis-le-Grand
+Avenue de l'Opera
+Rue de la Paix
+Rue du Quatre-Septembre
+Rue Volney
+Place de l'Opera
