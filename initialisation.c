@@ -20,7 +20,7 @@ int get_nb_noeuds(){
 //TODO recuperer le nb noeuds de l'exterieur
 void configurer_programme()
 {
-    char chemin[]="config.txt", tmp[LONGUEUR_CHAMP];
+    char chemin[]="config.txt";
     FILE* fichier;
     fichier = fopen(chemin, "r");
     fscanf(fichier, "%d", &nb_rues);
@@ -31,7 +31,7 @@ void configurer_programme()
 void initialiser_liste_rues(char noms[][LONGUEUR_CHAMP])
 {
     int i;
-    char chemin[]="names.txt", tmp[LONGUEUR_CHAMP];
+    char chemin[]="liste_rues_20noeuds.txt", tmp[LONGUEUR_CHAMP];
     FILE* csv;
     csv=fopen(chemin, "r");
 
@@ -45,10 +45,9 @@ void initialiser_liste_rues(char noms[][LONGUEUR_CHAMP])
     fclose(csv);
 }
 
-void initialiser_graph(Rue graph[][nb_noeuds])
+void initialiser_graph(Rue graph[][nb_noeuds], char *chemin)
 {
     FILE* csv;
-    char chemin[] = "graph.txt";
     int i, ligne=0, colonne;
     csv = fopen(chemin, "r");
     Rue tmp;
@@ -62,8 +61,8 @@ void initialiser_graph(Rue graph[][nb_noeuds])
         graph[ligne][colonne]=tmp;
 
         /*test*/
-        /*printf("\n%d - %d : %d - %d",
-               graph[ligne][colonne].id_rue, graph[ligne][colonne].distance, ligne, colonne);*/
+        printf("\n%d - %d : %d - %d",
+               graph[ligne][colonne].id_rue, graph[ligne][colonne].distance, ligne, colonne);
 
         if (colonne==nb_noeuds-1)
             ligne++;

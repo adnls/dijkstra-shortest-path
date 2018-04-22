@@ -121,7 +121,14 @@ void afficher_chemin(Etape* point_depart, char liste_rues[][LONGUEUR_CHAMP], int
     printf("\n\na l'intersection de\n");
     afficher_noeud(noeud_B, graph, liste_rues);
 
-    mode == 1 ? printf("\n\na pieds, \n\nprenez :\n") : printf("\n\nen voiture, \n\nprenez :\n");
+    if (mode == 1)
+    {
+        printf("\n\na pieds, \n\nprenez :\n");
+    }
+    else
+    {
+        printf("\n\nen voiture, \n\nprenez :\n");
+    }
 
     while (tmp!=NULL)
     {
