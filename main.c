@@ -32,20 +32,22 @@ int main()
 
             point_depart = NULL;
             initialiser_feuille_de_calcul(feuille_de_calcul);
-            //mode = choisir_mode();
+            mode = choisir_mode();
             choisir_chemin(&noeud_A, &noeud_B, graph, liste_rues);
             find_path(noeud_A, noeud_B, graph, feuille_de_calcul);
             store_path(noeud_A, noeud_B, &point_depart, graph, feuille_de_calcul);
-            afficher_chemin(point_depart, liste_rues, noeud_A, noeud_B);
+            afficher_chemin(point_depart, liste_rues, noeud_A, noeud_B, graph, mode);
             break;
 
         case 2:
 
-            if (noeud_A!=-1) afficher_chemin(point_depart, liste_rues, noeud_A, noeud_B);
+            if (noeud_A!=-1) afficher_chemin(point_depart, liste_rues, noeud_A, noeud_B, graph, mode);
             break;
 
-        case 3: default:
+        case 3: dire_au_revoir();
             break;
+
+        default: break;
         }
     }
     return 0;
