@@ -47,10 +47,11 @@ int main()
             }
             else
             {
-                choisir_chemin(&noeud_A, &noeud_B, graph_voiture, liste_rues);
+                //gros trap...
+                choisir_chemin(&noeud_A, &noeud_B, graph_apieds, liste_rues);
                 find_path(noeud_A, noeud_B, graph_voiture, feuille_de_calcul);
                 store_path(noeud_A, noeud_B, &point_depart, graph_voiture, feuille_de_calcul);
-                afficher_chemin(point_depart, liste_rues, noeud_A, noeud_B, graph_voiture, mode);
+                afficher_chemin(point_depart, liste_rues, noeud_A, noeud_B, graph_apieds, mode);
             }
             break;
 
@@ -61,7 +62,7 @@ int main()
                 mode == 1 ?
                 afficher_chemin(point_depart, liste_rues, noeud_A, noeud_B, graph_apieds, mode)
                 :
-                afficher_chemin(point_depart, liste_rues, noeud_A, noeud_B, graph_voiture, mode);
+                afficher_chemin(point_depart, liste_rues, noeud_A, noeud_B, graph_apieds, mode);
             }
             break;
 

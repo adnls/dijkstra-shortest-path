@@ -61,8 +61,8 @@ void initialiser_graph(Rue graph[][nb_noeuds], char *chemin)
         graph[ligne][colonne]=tmp;
 
         /*test*/
-        printf("\n%d - %d : %d - %d",
-               graph[ligne][colonne].id_rue, graph[ligne][colonne].distance, ligne, colonne);
+        /*printf("\n%d - %d : %d - %d",
+               graph[ligne][colonne].id_rue, graph[ligne][colonne].distance, ligne, colonne);*/
 
         if (colonne==nb_noeuds-1)
             ligne++;

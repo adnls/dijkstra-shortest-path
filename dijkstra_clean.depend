@@ -2,7 +2,7 @@
 1524090145 source:c:\users\toshiba\desktop\dijkstra_clean\csv.c
 	<stdio.h>
 
-1524426776 source:c:\users\toshiba\desktop\dijkstra_clean\main.c
+1524427027 source:c:\users\toshiba\desktop\dijkstra_clean\main.c
 	<stdio.h>
 	<stdlib.h>
 	"structures.h"
@@ -17,7 +17,7 @@
 	<stdio.h>
 	"structures.h"
 
-1524426979 source:c:\users\toshiba\desktop\dijkstra_clean\initialisation.c
+1524835754 source:c:\users\toshiba\desktop\dijkstra_clean\initialisation.c
 	<string.h>
 	<ctype.h>
 	"structures.h"
