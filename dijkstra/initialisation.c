@@ -28,19 +28,20 @@ void configurer_programme()
     fclose(fichier);
 }
 
-void initialiser_liste_rues(char noms[][LONGUEUR_CHAMP])
+void initialiser_liste_rues(char noms[][LONGUEUR_CHAMP], char *chemin)
 {
-    int i;
-    char chemin[]="liste_rues_20noeuds.txt", tmp[LONGUEUR_CHAMP];
+    int i, NB_RUES;
+    NB_RUES = get_nb_rues();
+    char tmp[LONGUEUR_CHAMP];
     FILE* csv;
     csv=fopen(chemin, "r");
 
-    for (i=0;i<nb_rues; i++)
+    for (i=0;i<NB_RUES; i++)
     {
         csvscanf(csv, tmp);
         strcpy(noms[i], tmp);
         /*test*/
-        //printf("\n%s", noms[i]);
+        //printf("%s\n", noms[i]);
     }
     fclose(csv);
 }

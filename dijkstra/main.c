@@ -18,16 +18,14 @@ int main()
     Noeud feuille_de_calcul[get_nb_noeuds()];
     Etape *point_depart = NULL;
 
-    initialiser_liste_rues(liste_rues);
-
-    initialiser_graph(graph_apieds, "graph_20noeuds_apieds.txt");
-    initialiser_graph(graph_voiture, "graph_20noeuds_voiture.txt");
+    initialiser_liste_rues(liste_rues, "liste-rues.csv");
+    initialiser_graph(graph_apieds, "graph-a-pieds.csv");
+    initialiser_graph(graph_voiture, "graph-en-voiture.csv");
 
     while (choix_menu != 3)
     {
         afficher_menu();
         scanf("%d", &choix_menu);
-        fflush(stdin);
 
         switch(choix_menu)
         {
@@ -43,15 +41,14 @@ int main()
                 choisir_chemin(&noeud_A, &noeud_B, graph_apieds, liste_rues);
                 find_path(noeud_A, noeud_B, graph_apieds, feuille_de_calcul);
                 store_path(noeud_A, noeud_B, &point_depart, graph_apieds, feuille_de_calcul);
-                afficher_chemin(point_depart, liste_rues, noeud_A, noeud_B, graph_apieds, mode);
+                afficher_chemin(point_depart, noeud_B, liste_rues, noeud_A, noeud_B, graph_apieds, mode);
             }
             else
             {
-                //gros trap...
                 choisir_chemin(&noeud_A, &noeud_B, graph_apieds, liste_rues);
                 find_path(noeud_A, noeud_B, graph_voiture, feuille_de_calcul);
                 store_path(noeud_A, noeud_B, &point_depart, graph_voiture, feuille_de_calcul);
-                afficher_chemin(point_depart, liste_rues, noeud_A, noeud_B, graph_apieds, mode);
+                afficher_chemin(point_depart, noeud_B, liste_rues, noeud_A, noeud_B, graph_apieds, mode);
             }
             break;
 
@@ -60,9 +57,9 @@ int main()
             if (noeud_A!=-1)
             {
                 mode == 1 ?
-                afficher_chemin(point_depart, liste_rues, noeud_A, noeud_B, graph_apieds, mode)
+                afficher_chemin(point_depart, noeud_B, liste_rues, noeud_A, noeud_B, graph_apieds, mode)
                 :
-                afficher_chemin(point_depart, liste_rues, noeud_A, noeud_B, graph_apieds, mode);
+                afficher_chemin(point_depart, noeud_B, liste_rues, noeud_A, noeud_B, graph_apieds, mode);
             }
             break;
 

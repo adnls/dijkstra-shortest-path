@@ -19,8 +19,8 @@ int csvscanf(FILE* csv, char champ[])
     }
 
     champ[i-1]='\0';
-
+	//printf("\n%s", champ);
     return tmp;
-    //printf("\n%s", field);
+    
 }
 

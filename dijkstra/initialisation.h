@@ -10,6 +10,6 @@ void configurer_programme(); //va chercher le nb rues et le nb noeuds tout simpl
 //TODO recursive version, menu, implement search bar, complete UI
 void initialiser_graph(Rue(*)[], char[]);
 void initialiser_feuille_de_calcul(Noeud[]);
-void initialiser_liste_rues(char(*)[]);
+void initialiser_liste_rues(char(*)[], char[]);
 
 #endif // INITIALISATION

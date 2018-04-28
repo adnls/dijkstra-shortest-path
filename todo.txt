@@ -1,5 +1,0 @@
-error handling
-get file paths from config.txt
-edit a makefile
-test build on other platforms
-write docs
