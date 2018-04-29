@@ -1,4 +1,4 @@
 #include "structures.h"
 
-void find_path(int, int, Rue(*)[], Noeud[]);
-void store_path(int, int, Etape**, Rue(*)[], Noeud[]);
+void trouver_chemin(int, int, Rue(*)[], Noeud[]);
+void stocker_chemin(int, int, Etape**, Rue(*)[], Noeud[]);

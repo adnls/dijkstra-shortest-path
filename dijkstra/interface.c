@@ -1,16 +1,11 @@
 #include "structures.h"
-#include "csv.h"
 #include "initialisation.h"
-//#include "strplus.h"oid
-//#include "queue.h"
-
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
 
-//TODO error handling..
 
 void afficher_rues(char(*)[]);
 int choisir_noeud(int, Rue(*)[], char(*)[]);
@@ -208,8 +203,7 @@ void afficher_noeud(int noeud, Rue graph[][get_nb_noeuds()], char liste_rues[][L
     {
         if (graph[noeud][i].id_rue != INFINI && !est_dans_la_liste(graph[noeud][i].id_rue, rues, compteur))
         {
-            rues[compteur] = graph[noeud][i].id_rue;
-            compteur++;
+            rues[compteur++] = graph[noeud][i].id_rue;
         }
     }
 
@@ -229,9 +223,9 @@ void dire_au_revoir()
 
 void vider_buffer()
   {
-    int corbeilleBuffer = 0;
-    while (corbeilleBuffer != '\n' && corbeilleBuffer != EOF) 
+    int tmp = 0;
+    while (tmp != '\n' && tmp != EOF) 
     {
-      corbeilleBuffer = getchar();
+      tmp = getchar();
     }
   }
