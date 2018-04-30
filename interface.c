@@ -22,7 +22,7 @@ void choisir_chemin(int* noeud_A, int* noeud_B, Rue graph[][get_nb_noeuds()], ch
     nettoyer_ecran();
     printf("Trouvez votre point de depart : \n\n");
     afficher_rues(liste_rues);
-    printf("\nEntrez un chiffre : ");
+    printf("\nEntrez le numero correspondant : ");
     scanf("%d", &id_rue);
     id_rue--;
     (*noeud_A) = choisir_noeud(id_rue, graph, liste_rues);
@@ -30,7 +30,7 @@ void choisir_chemin(int* noeud_A, int* noeud_B, Rue graph[][get_nb_noeuds()], ch
     nettoyer_ecran();
     printf("Trouvez votre point d'arrivee : \n\n");
     afficher_rues(liste_rues);
-    printf("\nEntrez un chiffre : ");
+    printf("\nEntrez le numero correspondant : ");
     scanf("%d", &id_rue);
     id_rue--;
     (*noeud_B) = choisir_noeud(id_rue, graph, liste_rues);
@@ -96,7 +96,7 @@ int choisir_noeud(int id_rue, Rue graph[][get_nb_noeuds()], char liste_rues[][LO
         }
     }
 
-    printf("\nEntrez un  chiffre : ");
+    printf("\nEntrez un numero: ");
     scanf("%d", &choix);
     
     return propositions[choix-1];
@@ -116,11 +116,11 @@ void afficher_chemin(Etape* point_depart, int arrivee, char liste_rues[][LONGUEU
 
     if (mode == 1)
     {
-        printf("\na pieds,\n\nprenez :\n\n");
+        printf("\nA pied,\n\nprenez :\n\n");
     }
     else
     {
-        printf("\nen voiture,\n\nprenez :\n\n");
+        printf("\nEn voiture,\n\nprenez :\n\n");
     }
 
     while (tmp!=NULL)
@@ -128,14 +128,14 @@ void afficher_chemin(Etape* point_depart, int arrivee, char liste_rues[][LONGUEU
         printf("%s\npendant %d metres jusqu'a l'intersection de :\n\n", liste_rues[tmp->id_rue], tmp->distance);	
 	
 	afficher_noeud(tmp->noeud_B, graph, liste_rues);
-	if (tmp->noeud_B != arrivee) printf("\npuis prenez :\n\n");
+	if (tmp->noeud_B != arrivee) printf("\nPuis prenez :\n\n");
 	
         distance_totale += tmp->distance;
         tmp = tmp->prochaine;
         i++;
     }
 
-    printf("\nvous etes arrives!\n");
+    printf("\nVous etes arrives!\n");
     printf("\nDistance totale : %d metres\n\n", distance_totale);
     entree_pour_continuer();
 }
@@ -147,10 +147,10 @@ int choisir_mode()
     while (reponse != 1 && reponse != 2)
     {
         nettoyer_ecran();
-        printf("Choisissez un mode :\n\n");
-        printf("1 - A pieds\n");
+        printf("Vous voulez y aller :\n\n");
+        printf("1 - A pied\n");
         printf("2 - En voiture\n");
-        printf("\nEntrez un chiffre : ");
+        printf("\nEntrez le numero associe a votre choix : ");
         scanf("%d", &reponse);
     };
 
@@ -160,11 +160,28 @@ int choisir_mode()
 void afficher_menu()
 {
         nettoyer_ecran();
-        printf("Menu\n\n");
-        printf("1 - Trouver un plus court chemin\n");
-        printf("2 - Revoir le chemin\n");
+        int i = 92;
+        printf("================================================================\n");
+        printf("******************** SOUS LE CIEL DE PARIS *********************\n");
+        printf("================================================================\n");
+        printf("Copyright David&Kien Company, avril 2014. Tous droits reserves\n\n");
+        printf("        _____\n");
+        printf("    ,-:` %c;',`'-, \n",i);
+        printf("  .'-;_,;  ':-;_,'.\n");
+        printf(" /;   '/    ,  _`.-%c\n",i);
+        printf("| '`. (`     /` ` %c`|\n",i);
+        printf("|:.  `%c`-.   %c_   / |\n",i,i);
+        printf("|     (   `,  .`%c ;'|\n",i);
+        printf(" %c     | .'     `-'/\n",i);
+        printf("  `.   ;/        .'\n");
+        printf("    `'-._____.\n");
+        printf("\n\nVous etes dans le deuxieme arrondissement a Paris et vous avez du mal à trouver votre destination?\n");
+        printf("Ce programme facilite les deplacements en ville en vous proposant la meilleure route!!");
+        printf("\n\n ## MENU PRINCIPAL ##\n\n");
+        printf("1 - Trouver mon itineraire\n");
+        printf("2 - Revoir le resultat\n");
         printf("3 - Quitter\n");
-        printf("\nEntrez un chiffre : ");
+        printf("\nVeuillez entrer le numero de votre choix : ");
 }
 
 void nettoyer_ecran()
@@ -218,7 +235,7 @@ void dire_au_revoir()
 {
     int i;
     nettoyer_ecran();
-    printf("Au revoir!\n\n\n\n\n");
+    printf("Bon voyage !   <(^_^)>   <(^_^)>\n\n\n\n\n");
 }
 
 void vider_buffer()
